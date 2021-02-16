@@ -19,7 +19,9 @@ if SERVER then
         return true
     end
 
-    concommand.Add( "zbox_playchatsound", function(ply,_,_,full) ply:PlayChatsound( full ) end )
+    local function concmd(ply,_,_,full) ply:PlayChatsound( full ) end
+    concommand.Add( "zbox_playchatsound", concmd )
+    concommand.Add( "saysound", concmd )
 
 else
 
